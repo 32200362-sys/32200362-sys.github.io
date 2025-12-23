@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 - 소리쌤</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/sorissam_logo.png">
+    <meta name="description" content="소리쌤에 로그인하여 나에게 딱 맞는 음악 선생님을 만나보세요.">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="./index.css?v=2.0">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navigation-wrapper">
+        <div class="navigation-container">
+            <a href="./index.html" class="navigation-logo">
+                <img src="./images/sorissam_logo.png" alt="소리쌤" class="logo-image">
+                <span class="logo-text">소리쌤</span>
+            </a>
+            <div class="navigation-links">
+                <a href="./index.html#features" class="navigation-link">기능</a>
+                <a href="./index.html#testimonials" class="navigation-link">후기</a>
+                <a href="./index.html#download" class="navigation-link">다운로드</a>
+                <a href="./login.html" class="navigation-login-btn">로그인</a>
+            </div>
+            <button class="navigation-toggle" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="login-logo">
+                        <img src="./images/sorissam_logo.png" alt="소리쌤" class="login-logo-image">
+                    </div>
+                    <h1 class="login-title">로그인</h1>
+                    <p class="login-subtitle">소리쌤에 오신 것을 환영합니다</p>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="userId" class="form-label">아이디</label>
+                        <input 
+                            type="text" 
+                            id="userId" 
+                            name="userId" 
+                            class="form-input" 
+                            placeholder="아이디를 입력하세요"
+                            required
+                            autocomplete="username"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">비밀번호</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input" 
+                            placeholder="비밀번호를 입력하세요"
+                            required
+                            autocomplete="current-password"
+                        >
+                    </div>
+
+                    <div class="form-options">
+                        <label class="form-checkbox">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span class="checkbox-label">로그인 상태 유지</span>
+                        </label>
+                        <a href="#" class="form-link">비밀번호 찾기</a>
+                    </div>
+
+                    <button type="submit" class="login-submit-btn">로그인</button>
+                </form>
+
+                <div class="login-footer">
+                    <p class="login-footer-text">
+                        아직 계정이 없으신가요?
+                        <a href="#" class="login-footer-link">회원가입</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-brand-logo">
+                        <img src="./images/sorissam_logo.png" alt="소리쌤" class="footer-logo-image">
+                        <h3 class="footer-brand-name">소리쌤</h3>
+                    </div>
+                    <p class="footer-tagline">나를 위한 음악 선생님</p>
+                </div>
+                <div class="footer-links-column">
+                    <h4 class="footer-column-title">제품</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="./index.html#features" class="footer-link">주요 기능</a></li>
+                        <li><a href="./index.html#testimonials" class="footer-link">사용자 후기</a></li>
+                        <li><a href="./index.html#download" class="footer-link">다운로드</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h4 class="footer-column-title">지원</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#" class="footer-link">고객센터</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h4 class="footer-column-title">Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="./terms.html" class="footer-link">이용약관</a></li>
+                        <li><a href="./privacy.html" class="footer-link">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 소리쌤(Sorissam). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const navToggle = document.querySelector('.navigation-toggle');
+            const navLinks = document.querySelector('.navigation-links');
+
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', function () {
+                    navLinks.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+
+            // Login form submission
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    
+                    const userId = document.getElementById('userId').value;
+                    const password = document.getElementById('password').value;
+                    const rememberMe = document.getElementById('rememberMe').checked;
+
+                    // 여기에 실제 로그인 로직을 구현하세요
+                    console.log('로그인 시도:', { userId, rememberMe });
+                    
+                    // 임시: 로그인 성공 메시지
+                    alert('로그인 기능은 현재 개발 중입니다.');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
